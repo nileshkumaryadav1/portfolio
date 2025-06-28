@@ -1,21 +1,52 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Light Mode */
+  --background: #f6e8ea; /* soft pink background */
+  --foreground: #22181c; /* dark text */
+  --accent: #ef626c; /* buttons, highlights */
+  --secondary: #312f2f; /* secondary text or dark backgrounds */
+  --highlight: #84dccf; /* soft mint - link hover, badges, tags */
+
+  /* colour for universal navbar */
+  --universal-nav-background: #22181c;
+  --universal-nav-foreground: #84dccf;
+  --universal-nav-accent: #ef626c;
+  --universal-nav-secondary: #312f2f;
+  --universal-nav-highlight: #f6e8ea;
+
+  /* colour for college finder */
+  --collegefinder-background: #e8f3f6;
+  --collegefinder-foreground: #22181c;
+  --collegefinder-accent: #62c9ef;
+  --collegefinder-secondary: #785252;
+  --collegefinder-highlight: #84dccf;
+
+  /* colour for blogging */
+  --blogging-background: #84dccf;
+  --blogging-foreground: #22181c;
+  --blogging-accent: #ef626c;
+  --blogging-secondary: #312f2f;
+  --blogging-highlight: #f6e8ea;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --color-secondary: var(--secondary);
+  --color-highlight: var(--highlight);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #22181c; /* deep maroon */
+    --foreground: #f6e8ea; /* light text on dark */
+    --accent: #ef626c;
+    --secondary: #84dccf; /* mint highlights in dark */
+    --highlight: #f6e8ea;
   }
 }
 
