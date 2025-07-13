@@ -2,18 +2,12 @@
 
 :root {
   /* Light Mode */
-  --background: #f6e8ea; /* soft pink background */
-  --foreground: #22181c; /* dark text */
-  --accent: #ef626c; /* buttons, highlights */
-  --secondary: #312f2f; /* secondary text or dark backgrounds */
-  --highlight: #84dccf; /* soft mint - link hover, badges, tags */
-
-  /* colour for universal navbar */
-  --universal-nav-background: #22181c;
-  --universal-nav-foreground: #84dccf;
-  --universal-nav-accent: #ef626c;
-  --universal-nav-secondary: #312f2f;
-  --universal-nav-highlight: #f6e8ea;
+  --background: #0b0b0f;
+  --foreground: #f8f8f8; /* light text on light */
+  --accent: #4ade80; /* green */
+  --secondary: #a1a1aa;
+  --border: #2e2e2e;
+  --highlight: #84dccf;
 
   /* colour for college finder */
   --collegefinder-background: #e8f3f6;
@@ -44,9 +38,10 @@
   :root {
     --background: #22181c; /* deep maroon */
     --foreground: #f6e8ea; /* light text on dark */
-    --accent: #ef626c;
+    --accent: #ef626c; /* light red */
     --secondary: #84dccf; /* mint highlights in dark */
-    --highlight: #f6e8ea;
+    --highlight: #f6e8ea; /* light text on dark */
+    --border: #2e2e2e; /* deep maroon */    
   }
 }
 

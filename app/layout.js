@@ -30,8 +30,8 @@ const montserrat = Montserrat({
 });
 
 export const metadata = {
-  title: "Nilesh Kumar",
-  description: "Portfolio Website",
+  title: "Nilesh Kumar | Portfolio",
+  description: "A Full Stack Developer Portfolio",
 };
 
 export default function RootLayout({ children }) {
@@ -41,8 +41,8 @@ export default function RootLayout({ children }) {
         <div className={montserrat.className}>
           <nav>
             <UniversalNavbar
-              bgColor={"var(--universal-nav-background)"}
-              textColor={"var(--universal-nav-foreground)"}
+              bgColor={"var(--border)"}
+              textColor={"var(--foreground)"}
             />
           </nav>
           <main>{children}</main>

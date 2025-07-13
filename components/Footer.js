@@ -1,39 +1,45 @@
 export default function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer
-      className="w-full px-6 py-8 mt-auto text-sm text-[color:var(--highlight)]"
+      className="w-full px-6 py-10 mt-auto text-sm border-t border-white/10"
       style={{
-        backgroundColor: "var(--foreground)",
+        backgroundColor: "var(--background)",
         color: "var(--highlight)",
       }}
     >
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-        <div className="text-center md:text-left">
-          <p className="text-[color:var(--highlight)] font-medium">
-            © {new Date().getFullYear()} Nilesh Kumar. All rights reserved.
-          </p>
-        </div>
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+        {/* Left: Copyright */}
+        <p className="text-center md:text-left font-medium text-[color:var(--highlight)]">
+          © {currentYear} Nilesh Kumar — All rights reserved.
+        </p>
 
-        <div className="flex gap-4">
+        {/* Right: Links */}
+        <nav className="flex gap-6 text-[color:var(--highlight)]">
           <a
             href="mailto:nileshkumarextra@gmail.com"
-            className="hover:underline hover:text-white transition"
+            className="hover:text-[color:var(--accent)] transition"
           >
             Contact
           </a>
           <a
-            href="/privacy"
-            className="hover:underline hover:text-white transition"
+            href="https://www.linkedin.com/in/nileshkumar123/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-[color:var(--accent)] transition"
           >
-            Privacy
+            LinkedIn
           </a>
           <a
-            href="/terms"
-            className="hover:underline hover:text-white transition"
+            href="https://github.com/nileshkumaryadav1/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-[color:var(--accent)] transition"
           >
-            Terms
+            GitHub
           </a>
-        </div>
+        </nav>
       </div>
     </footer>
   );
