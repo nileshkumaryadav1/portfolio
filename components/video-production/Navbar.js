@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Camera, Code, Palette } from "lucide-react";
 
-export default function HomeNavbar() {
+export default function Navbar() {
   const pathname = usePathname();
   const [showDropdown, setShowDropdown] = useState(false);
 
@@ -14,14 +14,14 @@ export default function HomeNavbar() {
   const linkClass = (href) =>
     `transition duration-200 px-1 tracking-wide ${
       isActive(href)
-        ? "text-[color:var(--accent)] font-semibold underline underline-offset-4"
-        : "text-[color:var(--foreground)] hover:text-[color:var(--accent)]"
+        ? "text-[color:var(--highlight-videoproduction)] font-semibold underline underline-offset-4"
+        : "text-[color:var(--foreground)] hover:text-[color:var(--highlight-videoproduction)]"
     }`;
 
   const dropdownLinkClass = (href) =>
     `flex items-center gap-2 px-4 py-2 text-sm rounded-md transition duration-150 ${
       isActive(href)
-        ? "bg-[color:var(--accent)]/10 text-[color:var(--accent)] font-semibold"
+        ? "bg-[color:var(--accent)]/10 text-[color:var(--highlight-videoproduction)] font-semibold"
         : "text-[color:var(--secondary)] hover:bg-[color:var(--border)]"
     }`;
 
@@ -48,8 +48,6 @@ export default function HomeNavbar() {
         <Link href="/video-production" className={linkClass("/video-production")}>
           <Camera size={16} className="inline mr-1 -mt-1" /> Videos
         </Link>
-
-        
 {/* Works Dropdown */}
 {pathname.startsWith("/works") ? (
   <span className="text-[color:var(--accent)] font-semibold underline underline-offset-4">
@@ -64,7 +62,7 @@ export default function HomeNavbar() {
     <button
       className={`transition font-medium ${
         showDropdown
-          ? "text-[color:var(--accent)] underline underline-offset-4"
+          ? "text-[color:var(--highlight-videoproduction)] underline underline-offset-4"
           : "text-[color:var(--foreground)] hover:text-[color:var(--accent)]"
       }`}
     >

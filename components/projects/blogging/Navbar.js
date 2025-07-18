@@ -4,9 +4,10 @@ import Link from "next/link";
 function Navbar() {
   return (
     <div
-      className="sticky top-0 z-50 w-full shadow-md px-6 py-4 flex flex-col md:flex-row md:justify-between md:items-center gap-2 bg-white"
+      className="sticky top-0 z-50 w-full shadow-md px-6 py-4 flex flex-col md:flex-row md:justify-between md:items-center gap-2"
       style={{
-        color: "var(--blogging-foreground)",
+        backgroundColor: "var(--background)",
+        color: "var(--foreground)",
       }}
     >
       {/* Logo and Breadcrumb */}
@@ -14,9 +15,10 @@ function Navbar() {
         <Link
           href="/projects/blogging"
           className="text-xl font-bold tracking-tight"
-          style={{ color: "var(--blogging-foreground)" }}
+          style={{ color: "var(--foreground)" }}
         >
-          Blogging<span className="text-pink-500">Platform</span>
+          Blogging
+          <span style={{ color: "var(--highlight-blogwriting)" }}>Platform</span>
         </Link>
 
         <div className="text-sm text-gray-400 hidden md:block">
@@ -29,9 +31,7 @@ function Navbar() {
             Projects
           </Link>
           <span className="mx-1">/</span>
-          <span className="text-black dark:text-white font-medium">
-            Blogging
-          </span>
+          <span className="text-white font-medium">Blogging</span>
         </div>
       </div>
 
@@ -39,7 +39,7 @@ function Navbar() {
       <div className="flex gap-4 items-center">
         <Link
           href="/projects"
-          className="text-sm hover:text-pink-600 transition"
+          className="text-sm hover:text-[var(--highlight-blogwriting)] transition"
         >
           ← Back to Projects
         </Link>
@@ -48,7 +48,7 @@ function Navbar() {
           href="https://github.com/nileshkumaryadav1/blogapp-frontend"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-sm hover:text-pink-600 transition"
+          className="text-sm hover:text-[var(--highlight-blogwriting)] transition"
         >
           GitHub
         </Link>
@@ -57,7 +57,11 @@ function Navbar() {
           href="https://blogwriting.vercel.app/"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-sm bg-pink-600 text-white px-4 py-1.5 rounded hover:bg-pink-700 transition"
+          className="text-sm px-4 py-1.5 rounded transition"
+          style={{
+            backgroundColor: "var(--highlight-blogwriting)",
+            color: "white",
+          }}
         >
           Live Demo
         </Link>

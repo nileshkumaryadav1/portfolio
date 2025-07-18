@@ -1,90 +1,150 @@
 "use client";
 
-import HomeNavbar from "@/components/home/Navbar";
-import { FaYoutube, FaPlay } from "react-icons/fa";
-import React from "react";
+import Navbar from "@/components/video-production/Navbar";
+import Image from "next/image";
+import Link from "next/link";
 
-export default function YouTubePromoPage() {
-  const highlights = [
+export default function Videos() {
+  const videos = [
     {
-      title: "🔥 Real Projects",
-      description: "Learn full-stack development with hands-on real-world apps.",
+      title: "Engineering Student DailyLife 2025",
+      href: "https://www.youtube.com/watch?v=NLh4gUvtdPY",
+      videoId: "NLh4gUvtdPY",
+      desc: "A dynamic aftermovie capturing 3 days of tech & culture.",
+      tag: "DailyLife",
     },
     {
-      title: "🚀 5-Minute Tutorials",
-      description: "Bite-sized videos to get concepts fast.",
+      title: "Centre Reels Showreel",
+      href: "https://www.instagram.com/reel/XXXXX",
+      videoId: "XXXXX", // Replace with actual Instagram reel ID if needed
+      desc: "Fast-paced editing and modern transitions for Instagram reels.",
+      tag: "Reel",
     },
     {
-      title: "🎯 For Beginners",
-      description: "Clear, beginner-friendly explainers without fluff.",
-    },
-    {
-      title: "🎥 Project Behind-the-Scenes",
-      description: "Explore how real projects are built from scratch.",
-    },
-    {
-      title: "💡 Dev Hacks",
-      description: "Smart tips to save time and boost productivity.",
+      title: "Promo Video for Hackathon",
+      href: "https://www.youtube.com/watch?v=xxxx",
+      videoId: "NLh4gUvtdPY",
+      desc: "Hype-building promo video for our coding showdown event.",
+      tag: "Promo",
     },
   ];
 
   return (
-    <>
-      <HomeNavbar />
-      <div className="bg-black text-white min-h-screen">
-        {/* Hero Section */}
-        <section className="relative h-[85vh] flex items-center justify-center text-center px-6 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png')" }}>
-          <div className="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
-          <div className="relative z-10 max-w-3xl">
-            <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-6">
-              Learn Full-Stack Dev Like Never Before
-            </h1>
-            <p className="text-lg md:text-xl text-gray-300 mb-8">
-              Subscribe to <span className="text-red-500 font-semibold">@nileshkumarnayan</span> for real dev insights, fast tech tutorials & more!
-            </p>
-            <a
-              href="https://www.youtube.com/@nileshkumarnayan"
+    <div
+      style={{
+        backgroundColor: "var(--background)",
+        color: "var(--foreground)",
+      }}
+      className="min-h-screen"
+    >
+      <Navbar />
+
+      {/* Hero Section */}
+      <section className="px-6 py-20 text-center">
+        <h1 className="text-4xl md:text-5xl font-extrabold mb-4 tracking-tight">
+          Glimpse of My{" "}
+          <span className="text-[color:var(--highlight-videoproduction)]">
+            Video Production
+          </span>
+        </h1>
+        <p className="text-md md:text-lg text-gray-400 max-w-2xl mx-auto">
+          A glimpse into the visual storytelling work I&apos;ve done — events,
+          promos, and engaging reels.
+        </p>
+      </section>
+
+      {/* Video Grid */}
+      <section className="px-6 pb-16 max-w-6xl mx-auto">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+          {videos.map((video, i) => (
+            <Link
+              href={video.href}
+              key={i}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-full font-semibold text-lg transition shadow-md"
+              className="group relative border border-gray-700 rounded-xl overflow-hidden bg-[color:var(--background)] hover:shadow-2xl hover:scale-[1.02] transition-transform duration-300"
             >
-              <FaYoutube size={20} /> Visit Channel
-            </a>
-          </div>
-        </section>
-
-        {/* Highlight Cards Section */}
-        <section className="py-20 px-6 max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">What You&apos;ll Get</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {highlights.map((item, index) => (
-              <div
-                key={index}
-                className="bg-[#111] p-6 rounded-lg shadow-lg hover:scale-[1.03] hover:shadow-xl transition duration-300 border border-gray-800"
-              >
-                <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-                <p className="text-gray-400">{item.description}</p>
+              <div className="relative w-full h-56 sm:h-64 lg:h-60">
+                <Image
+                  // src={
+                  //   video.href.includes("youtube")
+                  //     ? `https://img.youtube.com/vi/${video.videoId}/mqdefault.jpg`
+                  //     : "/placeholder-reel-thumbnail.jpg"
+                  // }
+                  src="/placeholder-reel-thumbnail.jpg"
+                  alt={`${video.title} thumbnail`}
+                  fill
+                  className="object-cover"
+                />
               </div>
-            ))}
-          </div>
-        </section>
+              <div className="relative z-10 p-6">
+                <div className="text-[10px] uppercase font-semibold text-gray-400 tracking-wider mb-2">
+                  {video.tag}
+                </div>
+                <h2 className="text-xl font-bold text-white group-hover:text-[color:var(--highlight-videoproduction)] transition">
+                  {video.title}
+                </h2>
+                <p className="text-sm text-gray-400 mt-2">{video.desc}</p>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
 
-        {/* Final CTA */}
-        <section className="bg-[#111] py-20 text-center">
-          <h2 className="text-2xl md:text-4xl font-bold mb-6">Start Watching Now</h2>
-          <p className="text-gray-400 mb-8 max-w-xl mx-auto">
-            The fastest way to level up your coding skills, build real projects, and stay ahead of the curve.
-          </p>
-          <a
-            href="https://www.youtube.com/@nileshkumarnayan"
+      {/* YT + Insta */}
+      <section className="px-6 py-16 text-center">
+        <h2 className="text-3xl md:text-4xl font-extrabold mb-4 tracking-tight">
+          Check out my{" "}
+          <span className="text-[color:var(--highlight-videoproduction)]">
+            YouTube
+          </span>{" "}
+          and{" "}
+          <span className="text-[color:var(--highlight-videoproduction)]">
+            Instagram
+          </span>{" "}
+          for more!
+        </h2>
+        <div className="flex flex-col sm:flex-row justify-center gap-4 mt-6">
+          <Link
+            href="https://www.youtube.com/@nileshandshubham"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-full font-semibold text-lg transition shadow-md"
+            className="inline-block bg-[color:var(--highlight-videoproduction)] text-white px-8 py-3 rounded-full font-medium text-lg hover:bg-[color:var(--highlight-techfest)] transition shadow-md"
           >
-            <FaPlay size={18} /> Watch Now
-          </a>
-        </section>
-      </div>
-    </>
+            YouTube
+          </Link>
+          <Link
+            href="https://www.instagram.com/nileshnayan_/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-[color:var(--highlight-videoproduction)] text-white px-8 py-3 rounded-full font-medium text-lg hover:bg-[color:var(--highlight-techfest)] transition shadow-md"
+          >
+            Instagram
+          </Link>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="px-6 py-16 text-center">
+        <h2 className="text-3xl md:text-4xl font-extrabold mb-4 tracking-tight">
+          Want to{" "}
+          <span className="text-[color:var(--highlight-videoproduction)]">
+            collaborate?
+          </span>
+        </h2>
+        <p className="text-md md:text-lg text-gray-400 max-w-2xl mx-auto">
+          I&apos;m always open to new collaborations and opportunities. Let&apos;s
+          create something amazing together!
+        </p>
+        <Link
+          href="mailto:nileshkumarextra@gmail.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-8 inline-block bg-[color:var(--highlight-videoproduction)] text-white px-8 py-3 rounded-full font-medium text-lg hover:bg-[color:var(--highlight-techfest)] transition shadow-md"
+        >
+          Connect with Me
+        </Link>
+      </section>
+    </div>
   );
 }

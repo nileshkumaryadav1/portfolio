@@ -9,19 +9,15 @@
   --border: #2e2e2e;
   --highlight: #84dccf;
 
-  /* colour for college finder */
-  --collegefinder-background: #e8f3f6;
-  --collegefinder-foreground: #22181c;
-  --collegefinder-accent: #62c9ef;
-  --collegefinder-secondary: #785252;
-  --collegefinder-highlight: #84dccf;
+  /* collegefinder highlight color */
+  --highlight-collegefinder: #74a9ff;
+  /* Blogwriting highlight color */
+  --highlight-blogwriting: #3b82f6;
+  /* techfest highlight color */
+  --highlight-techfest: #f59e0b;
 
-  /* colour for blogging */
-  --blogging-background: #84dccf;
-  --blogging-foreground: #22181c;
-  --blogging-accent: #ef626c;
-  --blogging-secondary: #312f2f;
-  --blogging-highlight: #f6e8ea;
+  /* Video Production highlight color */
+  --highlight-videoproduction: #f87171;
 }
 
 @theme inline {
