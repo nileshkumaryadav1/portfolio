@@ -45,9 +45,6 @@ export default function Navbar() {
           <Code size={16} className="inline mr-1 -mt-1" /> Projects
         </Link>
 
-        <Link href="/video-production" className={linkClass("/video-production")}>
-          <Camera size={16} className="inline mr-1 -mt-1" /> Videos
-        </Link>
 {/* Works Dropdown */}
 {pathname.startsWith("/works") ? (
   <span className="text-[color:var(--accent)] font-semibold underline underline-offset-4">
@@ -102,6 +99,11 @@ export default function Navbar() {
   </div>
 )}
 
+
+        <Link href="/video-production" className={linkClass("/video-production")}>
+          <Camera size={16} className="inline mr-1 -mt-1" /> Videos
+        </Link>
+        
       </nav>
 
       {/* Optional right section */}
